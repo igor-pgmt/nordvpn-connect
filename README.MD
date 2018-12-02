@@ -14,33 +14,23 @@ sudo mv nordvpn-connect /usr/bin/
 ### Usage
 
 ##### You can run this program with next flags:
+```sh
 Usage of nordVPNconnect:
 
   -conn string
-  
-   Please, specify connection command ("up", "down" or "nothing"). [string] (default: up (default "up")
-      
+    	Please, specify connection command ("up", "down" or "nothing"). [string] (default: up (default "up")
   -reload
-  
-   Please, specify reload flag to reload ipsec settings. [bool] (default: true) (default true)
-   
+    	Please, specify reload flag to reload ipsec settings. [bool] (default: true) (default true)
   -restart
-   
-   Please, specify restart flag to restart ipsec settings. [bool] (default: false)
-   
+    	Please, specify restart flag to restart ipsec settings. [bool] (default: false)
   -retryTimeout uint
-  
-   Please, specify timeout to retry to up connection in seconds. [uint64] (default: 3) (default 5)
-   
+    	Please, specify timeout to retry to up connection in seconds. [uint64] (default: 3) (default 5)
   -saveToConf
-  
-   Please, specify saveToConf flag to save the fastest server to ipsec configuration file. [bool] (default: true) (default true)
-   
+    	Please, specify saveToConf flag to save the fastest server to ipsec configuration file. [bool] (default: true) (default true)
   -statsURL string
-  
-   Please, specify API url with percentage statistics. [string] (default: https://nordvpn.com/api/server/stats) (default "https://nordvpn.com/api/server/stats")
-   
+    	Please, specify API url with percentage statistics. [string] (default: https://nordvpn.com/api/server/stats) (default "https://nordvpn.com/api/server/stats")
   -v	Please, specify v flag to enable verbose mode. [bool] (default: false)
+```
 
 ##### Examples:
 
