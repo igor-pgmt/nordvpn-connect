@@ -9,6 +9,7 @@ import (
 	"net/http"
 	"os"
 	"os/exec"
+	"strconv"
 	"strings"
 	"time"
 )
@@ -48,6 +49,9 @@ func checkFlags() {
 }
 
 func main() {
+
+	err := checkForPrivileges()
+	check(err)
 
 	checkFlags()
 
@@ -229,4 +233,24 @@ func replaceServer(lines []string, newServer string) {
 			lines[i] = "  right=" + newServer
 		}
 	}
+}
+
+func checkForPrivileges() error {
+
+	cmd := exec.Command("id", "-u")
+	output, err := cmd.Output()
+	if err != nil {
+		return fmt.Errorf("Failed to exec id command: %q", err)
+	}
+
+	i, err := strconv.Atoi(string(output[:len(output)-1]))
+	if err != nil {
+		return fmt.Errorf("Failed to convert terminal output string to int: %q", err)
+	}
+
+	if i != 0 {
+		return fmt.Errorf("you have to run this program with root permissions")
+	}
+
+	return nil
 }
