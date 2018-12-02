@@ -17,8 +17,11 @@ sudo mv nordvpn-connect /usr/bin/
 Usage of nordVPNconnect:
 
   -conn string
+  
     	Please, specify connection command ("up", "down" or "nothing"). [string] (default: up (default "up")
+      
   -reload
+  
     	Please, specify reload flag to reload ipsec settings. [bool] (default: true) (default true)
   -restart
     	Please, specify restart flag to restart ipsec settings. [bool] (default: false)
